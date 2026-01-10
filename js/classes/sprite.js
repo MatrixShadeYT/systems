@@ -19,12 +19,12 @@ class Sprite {
         if (!this.loaded) return;
         ctx.drawImage(
             this.image,
-            this.currentFrame*16,
+            this.currentFrame*this.width,
             0,
             this.width,
             this.height,
-            this.position.x,
-            this.position.y,
+            this.position.x*this.scale,
+            this.position.y*this.scale,
             this.width*this.scale,
             this.height*this.scale
         );
