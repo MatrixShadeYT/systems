@@ -1,4 +1,4 @@
-class Block {
+export class Block {
     constructor({height=3, width=3,  position={x: 0, y: 0}, velocity={x: 0, y: 0},color='red', gravity=0}) {
         this.position = position || {x:0,y:0};
         this.velocity = velocity || {x:0,y:0};
