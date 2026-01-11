@@ -1,11 +1,11 @@
 class Block {
     constructor({size={width: 3, height: 3},  position={x: 0, y: 0}, velocity={x: 0, y: 0},color='red', gravity=0}) {
-        this.height = size.height;
-        this.width = size.width;
-        this.position = position;
-        this.velocity = velocity;
-        this.gravity = gravity;
-        this.color = color;
+        this.position = position || {x: 0, y: 0};
+        this.velocity = velocity || {x: 0, y: 0};
+        this.height = size.height || 3;
+        this.width = size.width || 3;
+        this.gravity = gravity || 0;
+        this.color = color || 'red';
     }
     checkCollision(obj) {
         return (

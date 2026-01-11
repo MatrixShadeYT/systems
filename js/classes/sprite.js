@@ -1,7 +1,9 @@
 class Sprite {
     constructor({position, imageSrc, frameRate=1, frameBuffer=0, scale=1, gravity=0, velocity={x: 0, y: 0}}) {
-        this.frameRate = frameRate;
-        this.position = position;
+        this.frameRate = frameRate || 1;
+        this.position = position || {x:0,y:0};
+        this.velocity = velocity || {x:0,y:0};
+        this.gravity = gravity || 0;
         this.image = new Image();
         this.image.onload = () => {
             this.loaded = true;
@@ -9,13 +11,11 @@ class Sprite {
             this.height = this.image.height;
         }
         this.image.src = imageSrc;
+        this.scale = scale || 1;
         this.loaded = false;
-        this.scale = scale;
-        this.frameBuffer = frameBuffer;
+        this.frameBuffer = frameBuffer || 0;
         this.ellapsedFrames = 0;
         this.currentFrame = 0;
-        this.velocity = velocity;
-        this.gravity = gravity;
     }
     checkCollision(obj) {
         return (

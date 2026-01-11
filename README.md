@@ -1,5 +1,5 @@
 # Game Systems
-Canvas Setup
+Canvas Setup - This would be for a 2D Game.
 ```javascript
 const canvas = document.getElementsByTagName('canvas')[0];
 const ctx = canvas.getContext("2d");
