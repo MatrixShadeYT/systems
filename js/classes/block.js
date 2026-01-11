@@ -1,11 +1,11 @@
 class Block {
-    constructor({size={width: 3, height: 3},  position={x: 0, y: 0}, velocity={x: 0, y: 0},color='red', gravity=0}) {
-        this.position = position || {x: 0, y: 0};
-        this.velocity = velocity || {x: 0, y: 0};
-        this.height = size.height || 3;
-        this.width = size.width || 3;
+    constructor({height=3, width=3,  position={x: 0, y: 0}, velocity={x: 0, y: 0},color='red', gravity=0}) {
+        this.position = position || {x:0,y:0};
+        this.velocity = velocity || {x:0,y:0};
         this.gravity = gravity || 0;
         this.color = color || 'red';
+        this.height = height || 3;
+        this.width = width || 3;
     }
     checkCollision(obj) {
         return (
@@ -20,22 +20,19 @@ class Block {
             this.gravity = gravity;
             this.slow = slow;
         }
-        this.position.x += this.velocity.x;
         this.position.y += this.velocity.y;
         if (this.gravity == 0) {
-            this.velocity.x -= this.velocity.x*this.slow;
             this.velocity.y -= this.velocity.y*this.slow;
         } else {
-            this.velocity.x += this.gravity;
             this.velocity.y += this.gravity;
         }
     }
     draw(ctx) {
         ctx.fillStyle = this.color;
-        ctx.fillRect(this.position.x, this.position.y, this.size.width, this.size.height);
+        ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
     }
     update(ctx) {
-        this.draw(ctx);
         this.applyGravity();
+        this.draw(ctx);
     }
 }
