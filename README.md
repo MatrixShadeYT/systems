@@ -11,7 +11,7 @@ function animate() {
 animate();
 ```
 ## Functions
-[checkCollisions](js/functions/checkCollisions.js)
+[checkCollisions](js/functions/checkCollisions.js) - This would be for a 2D Game.
 Built into Sprite and Block Classes to only need one input.
 Assumes Objects have {position,width,height}
 ```javascript
