@@ -10,7 +10,6 @@ function animate() {
 }
 animate();
 ```
-animate();
 ## Classes
 [Sprite](js/classes/sprite.js)
 ```javascript
